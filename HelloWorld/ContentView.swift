@@ -24,10 +24,56 @@ struct ContentView: View {
     }
 }
 
+struct NewView: View {
+    var body: some View {
+        ZStack{
+            Color.cyan.ignoresSafeArea()
+            VStack(alignment: .leading){
+                ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                    VStack {
+                        Text("Title")
+                            .font(.title3)
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.black)
+                            .padding(.all, 10.0)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+struct CombineStacks: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Title")
+                .font(.title3)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.black)
+            HStack {
+                Text("Placeholder")
+                    .font(.subheadline)
+                Spacer()
+                Text("Placeholder")
+                    .font(.subheadline)
+                Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+            }
+            HStack() {
+                Image("turtlerock").clipShape(Circle())
+            }
+        }
+        .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+        
+    }
+}
+
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            CombineStacks()
                 .previewDevice("iPhone 13 Pro")
         }
     }
