@@ -61,10 +61,24 @@ struct CombineStacks: View {
             }
             HStack() {
                 Image("turtlerock").clipShape(Circle())
+                .overlay {
+                    Circle().stroke(.white, lineWidth: 5)
+                }
+                .shadow(color: Color.black, radius: 2, x: 0, y: 0)
             }
         }
         .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
         
+    }
+}
+
+struct CircleView: View {
+    var body: some View {
+        Image("turtlerock").clipShape(Circle())
+        .overlay {
+            Circle().stroke(.white, lineWidth: 5)
+        }
+        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
     }
 }
 
@@ -73,7 +87,7 @@ struct CombineStacks: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CombineStacks()
+            CircleView()
                 .previewDevice("iPhone 13 Pro")
         }
     }
