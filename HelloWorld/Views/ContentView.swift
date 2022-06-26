@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct OldView: View {
     var body: some View {
         VStack(alignment: .center){
             Image("logo")
@@ -69,26 +69,5 @@ struct CombineStacks: View {
         }
         .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
         
-    }
-}
-
-struct CircleView: View {
-    var body: some View {
-        Image("turtlerock").clipShape(Circle())
-        .overlay {
-            Circle().stroke(.white, lineWidth: 5)
-        }
-        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
-    }
-}
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CircleView()
-                .previewDevice("iPhone 13 Pro")
-        }
     }
 }

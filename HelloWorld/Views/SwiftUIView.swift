@@ -8,27 +8,15 @@
 import SwiftUI
 import MapKit
 
-struct MapView: View {
-    
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-    )
-    
-    var body: some View {
-        Map(coordinateRegion: $region)
-            .overlay(Rectangle().stroke(.white, lineWidth: 5))
-    }
-}
 
 struct TurtleRockView: View {
     var body: some View {
         VStack() {
-            MapView()
+            MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
                 .frame(height: 300)
                 .ignoresSafeArea(edges: .top)
             
-            CircleView()
+            CircleImage(image: Image("turtlerock"))
                 .padding(.bottom, -180.0)
                 .offset(y: -180)
             
