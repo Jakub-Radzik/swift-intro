@@ -29,7 +29,7 @@ struct LandmarkDetail: View {
                     Spacer()
                     Text(landmark.state)
                 }
-                Divider()
+                Divider().colorInvert()
                 Text("About \(landmark.name)")
                     .font(.title2)
                 Text(landmark.description)
@@ -39,6 +39,8 @@ struct LandmarkDetail: View {
             .padding()
             Spacer()
         }
+        .background(Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255))
+        .foregroundColor(Color.white)
         .ignoresSafeArea()
         .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
